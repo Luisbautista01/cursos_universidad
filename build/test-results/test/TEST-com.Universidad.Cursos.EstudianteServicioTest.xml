@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.Universidad.Cursos.EstudianteServicioTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2024-07-12T15:11:29" hostname="DESKTOP-B1CH9TQ" time="4.081">
+  <properties/>
+  <testcase name="actualizarEstudiante()" classname="com.Universidad.Cursos.EstudianteServicioTest" time="3.788"/>
+  <testcase name="crearEstudianteCuandoEsMenorDeEdad()" classname="com.Universidad.Cursos.EstudianteServicioTest" time="0.08"/>
+  <testcase name="obtenerCursosDelEstudiante()" classname="com.Universidad.Cursos.EstudianteServicioTest" time="0.01"/>
+  <testcase name="obtenerEstudiantesPorIdNoExistente()" classname="com.Universidad.Cursos.EstudianteServicioTest" time="0.016"/>
+  <testcase name="obtenereEstudiantes()" classname="com.Universidad.Cursos.EstudianteServicioTest" time="0.023"/>
+  <testcase name="eliminarEstudianteNoExistente()" classname="com.Universidad.Cursos.EstudianteServicioTest" time="0.03"/>
+  <testcase name="eliminarEstudiante()" classname="com.Universidad.Cursos.EstudianteServicioTest" time="0.025"/>
+  <testcase name="crearEstudianteCuandoEsMayorDeEdad()" classname="com.Universidad.Cursos.EstudianteServicioTest" time="0.029"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
