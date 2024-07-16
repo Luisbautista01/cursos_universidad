@@ -2,9 +2,7 @@ package com.Universidad.Cursos;
 
 import com.Universidad.Cursos.Excepciones.EstudianteNoEncontradoExcepcion;
 import com.Universidad.Cursos.Excepciones.MenorDeEdadExcepcion;
-import com.Universidad.Cursos.Modelo.Curso;
 import com.Universidad.Cursos.Modelo.Estudiante;
-import com.Universidad.Cursos.Modelo.Profesor;
 import com.Universidad.Cursos.Repositorio.CursoRepositorio;
 import com.Universidad.Cursos.Repositorio.EstudianteRepositorio;
 import com.Universidad.Cursos.Repositorio.ProfesorRepositorio;
