@@ -16,10 +16,10 @@ jobs:
         ports:
           - 3306:3306
         options: >-
-          --health-cmd="mysqladmin ping"
+          --health-cmd="mysqladmin ping -h 127.0.0.1 --silent"
           --health-interval=10s
           --health-timeout=5s
-          --health-retries=3
+          --health-retries=5
         env:
           MYSQL_ROOT_PASSWORD: 2424
           MYSQL_DATABASE: universidad_cursos
@@ -47,8 +47,8 @@ jobs:
 
       - name: Wait for MySQL to be ready
         run: |
-          until mysql -h 127.0.0.1 -P 3306 -u root -p2424 -e "SHOW DATABASES"; do
-            echo "Waiting for MySQL to be ready..."
+          echo "Waiting for MySQL to be ready..."
+          while ! mysqladmin ping -h 127.0.0.1 -P 3306 --silent; do
             sleep 10
           done
 
@@ -73,5 +73,6 @@ jobs:
       # See: https://github.com/gradle/actions/blob/main/dependency-submission/README.md
       - name: Generate and submit dependency graph
         uses: gradle/actions/dependency-submission@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
+
 
 
