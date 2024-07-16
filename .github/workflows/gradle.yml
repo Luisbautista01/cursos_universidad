@@ -48,9 +48,14 @@ jobs:
       - name: Wait for MySQL to be ready
         run: |
           echo "Waiting for MySQL to be ready..."
-          while ! mysqladmin ping -h 127.0.0.1 -P 3306 --silent; do
+          until mysqladmin ping -h 127.0.0.1 -P 3306 --silent; do
+            echo "MySQL is unavailable - sleeping"
             sleep 10
           done
+
+      - name: Check MySQL Logs
+        if: failure()
+        run: docker logs mysql
 
       - name: Build with Gradle Wrapper
         run: ./gradlew build
@@ -73,6 +78,7 @@ jobs:
       # See: https://github.com/gradle/actions/blob/main/dependency-submission/README.md
       - name: Generate and submit dependency graph
         uses: gradle/actions/dependency-submission@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
+
 
 
 
